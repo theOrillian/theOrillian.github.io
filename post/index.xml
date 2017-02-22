@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on theOrillian blog</title>
+    <link>http://www.orillian.com/post/index.xml</link>
+    <description>Recent content in Posts on theOrillian blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>greg@orillian.com (Greg Graham)</managingEditor>
+    <webMaster>greg@orillian.com (Greg Graham)</webMaster>
+    <copyright>(c) 2017 Orillian.</copyright>
+    <lastBuildDate>Mon, 20 Feb 2017 09:26:32 -0500</lastBuildDate>
+    <atom:link href="http://www.orillian.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Adventures with Hugo</title>
+      <link>http://www.orillian.com/2017/02/20/adventures-with-hugo/</link>
+      <pubDate>Mon, 20 Feb 2017 09:26:32 -0500</pubDate>
+      <author>greg@orillian.com (Greg Graham)</author>
+      <guid>http://www.orillian.com/2017/02/20/adventures-with-hugo/</guid>
+      <description>&lt;p&gt;Like all new technologies, this will be a learn as you go process. This post describes the process of creating and developing &lt;a href=&#34;https://orillian.com&#34; target=&#34;_blank&#34;&gt;theOrillian&lt;/a&gt; website. As new features are implemented, the post will be updated&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;day-1-stand-up-the-development-environment&#34;&gt;Day 1 - Stand up the development environment&lt;/h1&gt;
+
+&lt;p&gt;Use the &lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34; target=&#34;_blank&#34;&gt;Hugo Quickstart Guide&lt;/a&gt; to get rolling.&lt;/p&gt;
+
+&lt;p&gt;Use GitHub&amp;rsquo;s &lt;a href=&#34;https://guides.github.com/features/mastering-markdown&#34; target=&#34;_blank&#34;&gt;Mastering Markdown&lt;/a&gt; to get started with adding some format to your blog post.&lt;/p&gt;
+
+&lt;p&gt;Markdown does not support opening links to a new browser tab. To have links open in new tabs, you need to write the HTML yourself - &lt;code&gt;&amp;lt;a href=&amp;quot;https://orillian.com&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;theOrillian&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This site uses &lt;a href=&#34;https://github.com/enten/hyde-y&#34;&gt;Hyde-Y&lt;/a&gt;. If you plan on using this theme, you need to edit the &lt;strong&gt;config.toml&lt;/strong&gt;, &lt;strong&gt;data/Menu.toml&lt;/strong&gt; &amp;amp; &lt;strong&gt;data/FootMenu.toml&lt;/strong&gt; as shown in the theme configuration instructions.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/content/summaries/&#34;&gt;Blog summaries&lt;/a&gt; can be controlled by using &lt;code&gt;&amp;lt;!--more--&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Start to finish, the initial developer version stand-up of this site using Hugo took about 2 hours. No knowledge of Go or Javascript or CSS was required.&lt;/p&gt;
+
+&lt;h1 id=&#34;day-2-publish-the-website&#34;&gt;Day 2 - Publish the website&lt;/h1&gt;
+
+&lt;p&gt;Today I messed up. Seasoned IT pro and I still mess up sometimes. I was worrying about taxonomies and creating a &amp;laquo;blog series&amp;raquo; instead of just accomplishing my goal - publish theOrillian!&lt;/p&gt;
+
+&lt;h1 id=&#34;day-3-publish-the-website&#34;&gt;Day 3 - Publish the website&lt;/h1&gt;
+
+&lt;p&gt;Way easier than I thought. Follow the step-by-step instructions on &lt;a href=&#34;https://gohugo.io/tutorials/github-pages-blog/&#34; target=&#34;_blank&#34;&gt;Hosting on GitHub pages&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;GitHub pages does not support https. To get the website behind https, I followed the following&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m starting already to think about SEO. The first and only real SEO you need is to create a brand. And branding starts with content! That is one of the reasons for&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
