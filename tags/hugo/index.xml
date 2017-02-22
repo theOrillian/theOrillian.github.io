@@ -45,7 +45,7 @@
 
 &lt;p&gt;A couple of things that slowed down my progress were:
 * the repository that needed to be created was &lt;code&gt;&amp;lt;userName&amp;gt;.github.io&lt;/code&gt;, not &lt;code&gt;github.io&lt;/code&gt; in theOrillian user GitHub account.
-* the &lt;code&gt;config.toml&lt;/code&gt; needed to be altered, setting &lt;code&gt;baseurl = &amp;quot;http://theOrillian.github.io/&amp;quot;&lt;/code&gt; &lt;strong&gt;&lt;em&gt;Dont forget the final /&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+* the &lt;code&gt;config.toml&lt;/code&gt; needed to be altered, setting &lt;code&gt;baseurl = &amp;quot;http://theOrillian.github.io/&amp;quot;&lt;/code&gt; &lt;strong&gt;&lt;em&gt;Don&amp;rsquo;t forget the final &amp;lsquo;/&amp;rsquo;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;I pinched and updated a deploy script from GitHub user @sgylon:&lt;/p&gt;
 
@@ -72,6 +72,10 @@ git subtree push --prefix=public git@github.com:theOrillian/theOrillian.github.i
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h1 id=&#34;day-3-part-2-set-a-custom-domain-for-site&#34;&gt;Day 3 - Part #2: Set a custom domain for site&lt;/h1&gt;
+
+&lt;p&gt;For step-by-step instructions on setting up a custom domain for your site, while using Google domains, check out &lt;a href=&#34;http://www.curtismlarson.com/blog/2015/04/12/github-pages-google-domains/&#34; target=&#34;_blank&#34;&gt;GitHub Pages using google domains&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Your Goolge domain can be administrated from &lt;code&gt;domains.google.com&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h1 id=&#34;day-3-part-3-serve-custom-domain-with-https&#34;&gt;Day 3 - Part #3: Serve custom domain with https&lt;/h1&gt;</description>
     </item>
