@@ -12,11 +12,11 @@
     <atom:link href="http://orillian.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Adventures with Hugo</title>
-      <link>http://orillian.com/2017/02/20/adventures-with-hugo/</link>
+      <title>Up and running with Hugo</title>
+      <link>http://orillian.com/2017/02/20/up-and-running-with-hugo/</link>
       <pubDate>Mon, 20 Feb 2017 09:26:32 -0500</pubDate>
       <author>greg@orillian.com (Greg Graham)</author>
-      <guid>http://orillian.com/2017/02/20/adventures-with-hugo/</guid>
+      <guid>http://orillian.com/2017/02/20/up-and-running-with-hugo/</guid>
       <description>&lt;p&gt;Like all new technologies, this will be a learn as you go process. This post describes the process of creating and developing &lt;a href=&#34;https://orillian.com&#34; target=&#34;_blank&#34;&gt;theOrillian&lt;/a&gt; website. As new features are implemented, the post will be updated&amp;hellip;&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -72,6 +72,7 @@ git push origin master
 
 # Push the build repos.
 echo -e &amp;quot;\033[0;32mDeploying website to GitHub...\033[0m&amp;quot;
+
 #cd public &amp;amp;&amp;amp; git add --all &amp;amp;&amp;amp; git commit -m &amp;quot;$msg&amp;quot; &amp;amp;&amp;amp; git push origin master &amp;amp;&amp;amp; cd ..
 cd public
 git add --all
