@@ -47,7 +47,7 @@
 * the repository that needed to be created was &lt;code&gt;&amp;lt;userName&amp;gt;.github.io&lt;/code&gt;, not &lt;code&gt;github.io&lt;/code&gt; in theOrillian user GitHub account.
 * the &lt;code&gt;config.toml&lt;/code&gt; needed to be altered, setting &lt;code&gt;baseurl = &amp;quot;http://theOrillian.github.io&amp;quot;&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;I pinched and updated a deploy script from @sgylon:&lt;/p&gt;
+&lt;p&gt;I pinched and updated a deploy script from GitHub user @sgylon:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;#!/bin/bash
 
@@ -69,7 +69,11 @@ git commit -m &amp;quot;$msg&amp;quot;
 # Push source and build repos.
 git push origin master
 git subtree push --prefix=public git@github.com:theOrillian/theOrillian.github.io master
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;day-3-part-2-set-a-custom-domain-for-site&#34;&gt;Day 3 - Part #2: Set a custom domain for site&lt;/h1&gt;
+
+&lt;h1 id=&#34;day-3-part-3-serve-custom-domain-with-https&#34;&gt;Day 3 - Part #3: Serve custom domain with https&lt;/h1&gt;</description>
     </item>
     
   </channel>
