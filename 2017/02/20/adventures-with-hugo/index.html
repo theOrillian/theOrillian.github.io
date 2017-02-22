@@ -49,7 +49,7 @@
     },
     "datePublished": "2017-02-20",
     "description": "",
-    "wordCount":  396 
+    "wordCount":  471 
   }
 </script>
 
@@ -181,8 +181,8 @@
 
 
   
-  &middot; Read in about 2 min
-  &middot; (396 Words)
+  &middot; Read in about 3 min
+  &middot; (471 Words)
   <br>
   
 <a class="label" href="http://orillian.com/tags/hugo">Hugo</a>
@@ -230,10 +230,11 @@
 
 <pre><code class="language-shell">#!/bin/bash
 
-echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
+echo -e &quot;\033[0;32mDeploying website source to GitHub...\033[0m&quot;
 
 # Build the project.
-hugo # if using a theme, replace by `hugo -t &lt;yourtheme&gt;`
+rm -rf public/*
+hugo
 
 # Add changes to git.
 git add -A
@@ -245,9 +246,17 @@ if [ $# -eq 1 ]
 fi
 git commit -m &quot;$msg&quot;
 
-# Push source and build repos.
+# Push source repos.
 git push origin master
-git subtree push --prefix=public git@github.com:theOrillian/theOrillian.github.io master
+
+# Push the build repos.
+echo -e &quot;\033[0;32mDeploying website to GitHub...\033[0m&quot;
+#cd public &amp;&amp; git add --all &amp;&amp; git commit -m &quot;$msg&quot; &amp;&amp; git push origin master &amp;&amp; cd ..
+cd public
+git add --all
+git commit -m &quot;$msg&quot;
+git push origin master
+cd ..
 </code></pre>
 
 <h1 id="day-3-part-2-set-a-custom-domain-for-site">Day 3 - Part #2: Set a custom domain for site</h1>
@@ -255,6 +264,8 @@ git subtree push --prefix=public git@github.com:theOrillian/theOrillian.github.i
 <p>For step-by-step instructions on setting up a custom domain for your site, while using Google domains, check out <a href="http://www.curtismlarson.com/blog/2015/04/12/github-pages-google-domains/" target="_blank">GitHub Pages using google domains</a>.</p>
 
 <p>Your Goolge domain can be administrated from <code>domains.google.com</code>.</p>
+
+<p>I wanted to delete the entire public folder before generating and committing the new website. But there were 2 files that I wanted to preserve CNAME and the README.md in the GitHub repository. These files needed to be copied to the Hugo static folder.</p>
 
 <h1 id="day-3-part-3-serve-custom-domain-with-https">Day 3 - Part #3: Serve custom domain with https</h1>
 </div>
