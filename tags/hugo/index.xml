@@ -29,7 +29,7 @@
 
 &lt;p&gt;Markdown does not support opening links to a new browser tab. To have links open in new tabs, you need to write the HTML yourself - &lt;code&gt;&amp;lt;a href=&amp;quot;https://orillian.com&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;theOrillian&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;This site uses &lt;a href=&#34;https://github.com/enten/hyde-y&#34;&gt;Hyde-Y&lt;/a&gt;. If you plan on using this theme, you need to edit the &lt;strong&gt;config.toml&lt;/strong&gt;, &lt;strong&gt;data/Menu.toml&lt;/strong&gt; &amp;amp; &lt;strong&gt;data/FootMenu.toml&lt;/strong&gt; as shown in the theme configuration instructions.&lt;/p&gt;
+&lt;p&gt;This site uses &lt;a href=&#34;https://github.com/enten/hyde-y&#34;&gt;https://github.com/enten/hyde-y&lt;/a&gt;. If you plan on using this theme, you need to edit the &lt;strong&gt;config.toml&lt;/strong&gt;, &lt;strong&gt;data/Menu.toml&lt;/strong&gt; &amp;amp; &lt;strong&gt;data/FootMenu.toml&lt;/strong&gt; as shown in the theme configuration instructions.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://gohugo.io/content/summaries/&#34;&gt;Blog summaries&lt;/a&gt; can be controlled by using &lt;code&gt;&amp;lt;!--more--&amp;gt;&lt;/code&gt;.&lt;/p&gt;
 
