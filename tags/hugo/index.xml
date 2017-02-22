@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on theOrillian blog</title>
-    <link>http://www.orillian.com/tags/hugo/index.xml</link>
+    <link>http://theorillian.github.io/tags/hugo/index.xml</link>
     <description>Recent content in Hugo on theOrillian blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <managingEditor>greg@orillian.com (Greg Graham)</managingEditor>
     <webMaster>greg@orillian.com (Greg Graham)</webMaster>
     <copyright>(c) 2017 Orillian.</copyright>
-    <atom:link href="http://www.orillian.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://theorillian.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Adventures with Hugo</title>
-      <link>http://www.orillian.com/2017/02/20/adventures-with-hugo/</link>
+      <link>http://theorillian.github.io/2017/02/20/adventures-with-hugo/</link>
       <pubDate>Mon, 20 Feb 2017 09:26:32 -0500</pubDate>
       <author>greg@orillian.com (Greg Graham)</author>
-      <guid>http://www.orillian.com/2017/02/20/adventures-with-hugo/</guid>
+      <guid>http://theorillian.github.io/2017/02/20/adventures-with-hugo/</guid>
       <description>&lt;p&gt;Like all new technologies, this will be a learn as you go process. This post describes the process of creating and developing &lt;a href=&#34;https://orillian.com&#34; target=&#34;_blank&#34;&gt;theOrillian&lt;/a&gt; website. As new features are implemented, the post will be updated&amp;hellip;&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -39,13 +39,37 @@
 
 &lt;p&gt;Today I messed up. Seasoned IT pro and I still mess up sometimes. I was worrying about taxonomies and creating a &amp;laquo;blog series&amp;raquo; instead of just accomplishing my goal - publish theOrillian!&lt;/p&gt;
 
-&lt;h1 id=&#34;day-3-publish-the-website&#34;&gt;Day 3 - Publish the website&lt;/h1&gt;
+&lt;h1 id=&#34;day-3-part-1-publish-the-website&#34;&gt;Day 3 - Part #1: Publish the website&lt;/h1&gt;
 
-&lt;p&gt;Way easier than I thought. Follow the step-by-step instructions on &lt;a href=&#34;https://gohugo.io/tutorials/github-pages-blog/&#34; target=&#34;_blank&#34;&gt;Hosting on GitHub pages&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Way easier than I thought. Follow the step-by-step instructions on &lt;a href=&#34;http://whipperstacker.com/2015/11/27/deploying-a-stand-alone-hugo-site-to-github-pages-mapped-to-a-custom-domain/&#34; target=&#34;_blank&#34;&gt;Deploying a Stand-Alone Hugo Site to GitHub Pages Mapped to a Custom Domain&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;GitHub pages does not support https. To get the website behind https, I followed the following&lt;/p&gt;
+&lt;p&gt;A couple of things that slowed down my progress were:
+* the repository that needed to be created was &lt;code&gt;&amp;lt;userName&amp;gt;.github.io&lt;/code&gt;, not &lt;code&gt;github.io&lt;/code&gt; in theOrillian user GitHub account.
+* the &lt;code&gt;config.toml&lt;/code&gt; needed to be altered, setting &lt;code&gt;baseurl = &amp;quot;http://theOrillian.github.io&amp;quot;&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;I&amp;rsquo;m starting already to think about SEO. The first and only real SEO you need is to create a brand. And branding starts with content! That is one of the reasons for&lt;/p&gt;</description>
+&lt;p&gt;I pinched and updated a deploy script from @sgylon:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;#!/bin/bash
+
+echo -e &amp;quot;\033[0;32mDeploying updates to GitHub...\033[0m&amp;quot;
+
+# Build the project.
+hugo # if using a theme, replace by `hugo -t &amp;lt;yourtheme&amp;gt;`
+
+# Add changes to git.
+git add -A
+
+# Commit changes.
+msg=&amp;quot;Rebuilding site `date`&amp;quot;
+if [ $# -eq 1 ]
+      then msg=&amp;quot;$1&amp;quot;
+fi
+git commit -m &amp;quot;$msg&amp;quot;
+
+# Push source and build repos.
+git push origin master
+git subtree push --prefix=public git@github.com:theOrillian/theOrillian.github.io master
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
   </channel>

@@ -2,35 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.orillian.com/2017/02/20/adventures-with-hugo/</loc>
+    <loc>http://theorillian.github.io/2017/02/20/adventures-with-hugo/</loc>
     <lastmod>2017-02-20T09:26:32-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.orillian.com/tags/hugo/</loc>
-    <lastmod>2017-02-20T09:26:32-05:00</lastmod>
+    <loc>http://theorillian.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.orillian.com/post/</loc>
-    <lastmod>2017-02-20T09:26:32-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.orillian.com/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.orillian.com/tags/website/</loc>
+    <loc>http://theorillian.github.io/tags/hugo/</loc>
     <lastmod>2017-02-20T09:26:32-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.orillian.com/</loc>
+    <loc>http://theorillian.github.io/post/</loc>
+    <lastmod>2017-02-20T09:26:32-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://theorillian.github.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://theorillian.github.io/categories/theorillian/</loc>
+    <lastmod>2017-02-20T09:26:32-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://theorillian.github.io/tags/website/</loc>
+    <lastmod>2017-02-20T09:26:32-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://theorillian.github.io/</loc>
     <lastmod>2017-02-20T09:26:32-05:00</lastmod>
     <priority>0</priority>
   </url>
