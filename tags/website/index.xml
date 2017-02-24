@@ -8,15 +8,15 @@
     <language>en-EN</language>
     <managingEditor>greg@orillian.com (Greg Graham)</managingEditor>
     <webMaster>greg@orillian.com (Greg Graham)</webMaster>
-    <copyright>(c) 2017 Orillian.</copyright>
+    <copyright>(c) 2017 theOrillian.</copyright>
     <atom:link href="https://orillian.com/tags/website/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Up and running with Hugo</title>
-      <link>https://orillian.com/2017/02/20/up-and-running-with-hugo/</link>
+      <title>Getting started with Hugo static website generator</title>
+      <link>https://orillian.com/2017/02/20/getting-started-with-hugo-static-website-generator/</link>
       <pubDate>Mon, 20 Feb 2017 09:26:32 -0500</pubDate>
       <author>greg@orillian.com (Greg Graham)</author>
-      <guid>https://orillian.com/2017/02/20/up-and-running-with-hugo/</guid>
+      <guid>https://orillian.com/2017/02/20/getting-started-with-hugo-static-website-generator/</guid>
       <description>&lt;p&gt;Like all new technologies, this will be a learn-as-you-go process. This post describes the process of creating and developing &lt;a href=&#34;https://orillian.com&#34; target=&#34;_blank&#34;&gt;theOrillian&lt;/a&gt; website. This post will serve as my learn-as-you-go test post. As new features are discovered/implemented, the post will be updated.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
@@ -33,8 +33,6 @@
 
 &lt;p&gt;&lt;a href=&#34;https://gohugo.io/content/summaries/&#34; target=&#34;_blank&#34;&gt;Blog summaries&lt;/a&gt; can be controlled by using &lt;code&gt;&amp;lt;!--more--&amp;gt;&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Update the flavicon. If&lt;/p&gt;
-
 &lt;p&gt;Start to finish, the initial developer version stand-up of this site using Hugo took about 2 hours. No knowledge of Go or Javascript or CSS was required.&lt;/p&gt;
 
 &lt;h1 id=&#34;day-2-publish-the-website&#34;&gt;Day 2 - Publish the website&lt;/h1&gt;
@@ -42,6 +40,8 @@
 &lt;p&gt;Today I messed up. As a seasoned IT pro and I still mess up sometimes. I was worrying about taxonomies and creating a &amp;laquo;blog series&amp;raquo; instead of just accomplishing my goal - use Hugo to generate the &lt;a href=&#34;https://orillian.com&#34; target=&#34;_blank&#34;&gt;orillian.com&lt;/a&gt; website!&lt;/p&gt;
 
 &lt;p&gt;I wasted several hours and did not accomplish my goal. I&amp;rsquo;ll try again tomorrow.&lt;/p&gt;
+
+&lt;p&gt;The goal of this site is to document my career based experiences and learnings. Most of the blog postings will be technical in nature, some may be administrative.&lt;/p&gt;
 
 &lt;h1 id=&#34;day-3-part-1-publish-the-website&#34;&gt;Day 3 - Part #1: Publish the website&lt;/h1&gt;
 
@@ -110,13 +110,17 @@ cd ..
 
 &lt;p&gt;Your Google Domain can be administrated from &lt;code&gt;domains.google.com&lt;/code&gt;. It took about an hour for the DNS records to propagate. The site says it may take up to 24hours. Grab dinner, walk the dog or get some sleep.&lt;/p&gt;
 
-&lt;p&gt;I wanted to delete the entire public folder before generating and committing the new website. But there were 2 files that I wanted to preserve CNAME and the README.md in the GitHub repository. These files needed to be copied to the Hugo static folder and commited to the Hugo website source.&lt;/p&gt;
+&lt;p&gt;I wanted to delete the entire public folder before generating and committing the new website. But there were 2 files that I wanted to preserve CNAME and the README.md in the GitHub repository. These files needed to be copied to the Hugo static folder and committed to the Hugo website source.&lt;/p&gt;
 
 &lt;h1 id=&#34;day-3-part-3-serve-custom-domain-with-https&#34;&gt;Day 3 - Part #3: Serve custom domain with https&lt;/h1&gt;
 
 &lt;p&gt;The article I used to configure https for my GitHub Pages is &lt;a href=&#34;https://www.goyllo.com/github/pages/free-cloudflare-ssl-for-custom-domain/&#34; target=&#34;_blank&#34;&gt;How To Add Free Cloudflare SSL in Github Pages with Custom Domain&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;It was almost too easy to set up Cloudflare. Create a free account, then let it discover your current configuration, finally change the DNS server for your domain. Again, the site says it may take up to 24hours. Grab dinner, walk the dog or get some sleep.&lt;/p&gt;</description>
+&lt;p&gt;It was almost too easy to set up Cloudflare. Create a free account, then let it discover your current configuration, finally change the DNS server for your domain. Again, the site says it may take up to 24hours. Grab dinner, walk the dog or get some sleep.&lt;/p&gt;
+
+&lt;h1 id=&#34;day-3-part-4-creating-content&#34;&gt;Day 3 - Part #4: Creating content&lt;/h1&gt;
+
+&lt;p&gt;The whole purpose of publishing a static website is to share content. So, while there are many things I&amp;rsquo;d like to change, it&amp;rsquo;s time to create content!&lt;/p&gt;</description>
     </item>
     
   </channel>
