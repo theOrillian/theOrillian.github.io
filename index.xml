@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Orillian</title>
+    <title>theOrillian</title>
     <link>https://orillian.com/index.xml</link>
-    <description>Recent content on Orillian</description>
+    <description>Recent content on theOrillian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <managingEditor>greg@orillian.com (Greg Graham)</managingEditor>
     <webMaster>greg@orillian.com (Greg Graham)</webMaster>
-    <copyright>(c) 2017 theOrillian.</copyright>
-    <lastBuildDate>Mon, 20 Feb 2017 09:26:32 -0500</lastBuildDate>
+    <copyright>(c) 2017 Greg Graham, theOrillian.</copyright>
+    <lastBuildDate>Sat, 25 Feb 2017 07:04:29 -0500</lastBuildDate>
     <atom:link href="https://orillian.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Getting started with Hugo static website generator</title>
-      <link>https://orillian.com/2017/02/20/getting-started-with-hugo-static-website-generator/</link>
-      <pubDate>Mon, 20 Feb 2017 09:26:32 -0500</pubDate>
+      <link>https://orillian.com/2017/02/25/getting-started-with-hugo-static-website-generator/</link>
+      <pubDate>Sat, 25 Feb 2017 07:04:29 -0500</pubDate>
       <author>greg@orillian.com (Greg Graham)</author>
-      <guid>https://orillian.com/2017/02/20/getting-started-with-hugo-static-website-generator/</guid>
+      <guid>https://orillian.com/2017/02/25/getting-started-with-hugo-static-website-generator/</guid>
       <description>&lt;p&gt;Like all new technologies, this will be a learn-as-you-go process. This post describes the process of creating and developing &lt;a href=&#34;https://orillian.com&#34; target=&#34;_blank&#34;&gt;theOrillian&lt;/a&gt; website. This post will serve as my learn-as-you-go test post. As new features are discovered/implemented, the post will be updated.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
