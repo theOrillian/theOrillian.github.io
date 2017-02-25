@@ -31,7 +31,7 @@
 
 &lt;p&gt;This site uses &lt;a href=&#34;https://github.com/enten/hyde-y&#34; target=&#34;_blank&#34;&gt;Hyde-Y&lt;/a&gt; theme. If you plan on using this theme, you need to edit the &lt;strong&gt;config.toml&lt;/strong&gt;, &lt;strong&gt;data/Menu.toml&lt;/strong&gt; &amp;amp; &lt;strong&gt;data/FootMenu.toml&lt;/strong&gt; as shown in the theme configuration instructions.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://gohugo.io/content/summaries/&#34; target=&#34;_blank&#34;&gt;Blog summaries&lt;/a&gt; can be controlled by using &lt;code&gt;&amp;lt;!--more--&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/content/summaries/&#34; target=&#34;_blank&#34;&gt;Blog summaries&lt;/a&gt; can be controlled by using &lt;code&gt;&amp;lt;!--more--&amp;gt;&lt;/code&gt;. Leave the post metadata for the description field blank.&lt;/p&gt;
 
 &lt;p&gt;Start to finish, the initial developer version stand-up of this site using Hugo took about 2 hours. No knowledge of Go or Javascript or CSS was required.&lt;/p&gt;
 

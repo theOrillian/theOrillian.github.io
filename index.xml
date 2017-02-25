@@ -32,7 +32,7 @@
 
 &lt;p&gt;This site uses &lt;a href=&#34;https://github.com/enten/hyde-y&#34; target=&#34;_blank&#34;&gt;Hyde-Y&lt;/a&gt; theme. If you plan on using this theme, you need to edit the &lt;strong&gt;config.toml&lt;/strong&gt;, &lt;strong&gt;data/Menu.toml&lt;/strong&gt; &amp;amp; &lt;strong&gt;data/FootMenu.toml&lt;/strong&gt; as shown in the theme configuration instructions.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://gohugo.io/content/summaries/&#34; target=&#34;_blank&#34;&gt;Blog summaries&lt;/a&gt; can be controlled by using &lt;code&gt;&amp;lt;!--more--&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/content/summaries/&#34; target=&#34;_blank&#34;&gt;Blog summaries&lt;/a&gt; can be controlled by using &lt;code&gt;&amp;lt;!--more--&amp;gt;&lt;/code&gt;. Leave the post metadata for the description field blank.&lt;/p&gt;
 
 &lt;p&gt;Start to finish, the initial developer version stand-up of this site using Hugo took about 2 hours. No knowledge of Go or Javascript or CSS was required.&lt;/p&gt;
 
@@ -132,15 +132,16 @@ cd ..
       <guid>https://orillian.com/about/</guid>
       <description>&lt;p&gt;Based in Marshalltown Iowa, I am a Senior Technology Engineer for &lt;a href=&#34;https://marshalltown.com&#34; target=&#34;_blank&#34;&gt;Marshalltown&lt;/a&gt;, a mid-west tool manufacturing and distribution company.&lt;/p&gt;
 
-&lt;p&gt;My role at Marshalltown is to work with our Dynamics AX users to understand their business requirements and match those with the native capabilities of Dynamics AX.&lt;/p&gt;
+&lt;p&gt;My role at Marshalltown is to work with our Dynamics AX users to understand their business requirements and match those with the native capabilities of Dynamics AX. I consider myself a Dynamics AX expert developer. As well, I am confident with all aspects SQLServer, including ETL and Analytics.&lt;/p&gt;
 
-&lt;p&gt;I consider myself a Dynamics AX expert developer. As well, I am confident with all aspects SQLServer, including ETL and Analytics.&lt;/p&gt;
+&lt;p&gt;My professional merit boils down to the following:&lt;/p&gt;
 
-&lt;p&gt;My professional merit boils down to the following:
-- I plan, execute, measure, adapt and repeat
-- pressure does not phase me
-- I show up on game day prepared to win
-- with a team and a whiteboard I can get any technical problem solved&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;plan, execute, measure, adapt and repeat&lt;/li&gt;
+&lt;li&gt;pressure does not phase me&lt;/li&gt;
+&lt;li&gt;show up on game day prepared to win&lt;/li&gt;
+&lt;li&gt;with a team and a whiteboard, any technical problem can be solved&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;I enjoy making new professional acquaintances. Reach out if you want to talk technology, business or triathlon.&lt;/p&gt;
 </description>
