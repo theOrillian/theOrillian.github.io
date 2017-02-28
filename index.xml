@@ -130,7 +130,7 @@ cd ..
       <pubDate>Sat, 25 Feb 2017 05:15:17 -0500</pubDate>
       <author>greg@orillian.com (Greg Graham)</author>
       <guid>https://orillian.com/about/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://orillian.com/avatar.jpg&#34; width=100&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://orillian.com/avatar.jpg&#34; width=120 align=&#34;left&#34; hspace=20&gt;&lt;/p&gt;
 
 &lt;p&gt;Based in Marshalltown Iowa, I am a Senior Technology Engineer for &lt;a href=&#34;https://marshalltown.com&#34; target=&#34;_blank&#34;&gt;Marshalltown&lt;/a&gt;, a mid-west tool manufacturing and distribution company.&lt;/p&gt;
 
