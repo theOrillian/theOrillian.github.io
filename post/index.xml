@@ -18,7 +18,7 @@
       <pubDate>Sat, 25 Feb 2017 07:04:29 -0500</pubDate>
       <author>greg@orillian.com (Greg Graham)</author>
       <guid>https://orillian.com/2017/02/25/getting-started-with-hugo-static-website-generator/</guid>
-      <description>&lt;p&gt;Like all new technologies, this will be a learn-as-you-go process. This post describes the process of creating and developing &lt;a href=&#34;https://orillian.com&#34; target=&#34;_blank&#34;&gt;theOrillian&lt;/a&gt; website. This post will serve as my learn-as-you-go test post. As new features are discovered/implemented, the post will be updated.&lt;/p&gt;
+      <description>&lt;p&gt;I do not recommend using the information in this blog post as your template for generating a Hugo static website. The post serves me as content I can use to understand how Hugo works. While Googling for answers to setup and configuration questions, I noticed a wide variety of possible solutions. Sometimes this lead to more confusion. In the end, the number one most important thing &lt;em&gt;for me&lt;/em&gt; was to create a ./deploy.sh script that codifies the deploy process. Then, move on to creating content&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
 

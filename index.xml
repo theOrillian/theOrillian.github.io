@@ -18,7 +18,7 @@
       <pubDate>Sat, 25 Feb 2017 07:04:29 -0500</pubDate>
       <author>greg@orillian.com (Greg Graham)</author>
       <guid>https://orillian.com/2017/02/25/getting-started-with-hugo-static-website-generator/</guid>
-      <description>&lt;p&gt;Like all new technologies, this will be a learn-as-you-go process. This post describes the process of creating and developing &lt;a href=&#34;https://orillian.com&#34; target=&#34;_blank&#34;&gt;theOrillian&lt;/a&gt; website. This post will serve as my learn-as-you-go test post. As new features are discovered/implemented, the post will be updated.&lt;/p&gt;
+      <description>&lt;p&gt;I do not recommend using the information in this blog post as your template for generating a Hugo static website. The post serves me as content I can use to understand how Hugo works. While Googling for answers to setup and configuration questions, I noticed a wide variety of possible solutions. Sometimes this lead to more confusion. In the end, the number one most important thing &lt;em&gt;for me&lt;/em&gt; was to create a ./deploy.sh script that codifies the deploy process. Then, move on to creating content&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
 
@@ -130,7 +130,9 @@ cd ..
       <pubDate>Sat, 25 Feb 2017 05:15:17 -0500</pubDate>
       <author>greg@orillian.com (Greg Graham)</author>
       <guid>https://orillian.com/about/</guid>
-      <description>&lt;p&gt;Based in Marshalltown Iowa, I am a Senior Technology Engineer for &lt;a href=&#34;https://marshalltown.com&#34; target=&#34;_blank&#34;&gt;Marshalltown&lt;/a&gt;, a mid-west tool manufacturing and distribution company.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://orillian.com/static/img/avatar.jpg&#34; width=100&gt;&lt;/p&gt;
+
+&lt;p&gt;Based in Marshalltown Iowa, I am a Senior Technology Engineer for &lt;a href=&#34;https://marshalltown.com&#34; target=&#34;_blank&#34;&gt;Marshalltown&lt;/a&gt;, a mid-west tool manufacturing and distribution company.&lt;/p&gt;
 
 &lt;p&gt;My role at Marshalltown is to work with our Dynamics AX users to understand their business requirements and match those with the native capabilities of Dynamics AX. I consider myself a Dynamics AX expert developer. As well, I am confident with all aspects SQLServer, including ETL and Analytics.&lt;/p&gt;
 
