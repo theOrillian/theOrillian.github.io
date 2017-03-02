@@ -9,8 +9,176 @@
     <managingEditor>greg@orillian.com (Greg Graham)</managingEditor>
     <webMaster>greg@orillian.com (Greg Graham)</webMaster>
     <copyright>(c) 2017 Greg Graham, theOrillian.</copyright>
-    <lastBuildDate>Sat, 25 Feb 2017 07:04:29 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 02 Mar 2017 07:50:58 -0500</lastBuildDate>
     <atom:link href="https://orillian.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>SQL can be beautiful, but it takes effort</title>
+      <link>https://orillian.com/2017/03/02/sql-can-be-beautiful-but-it-takes-effort/</link>
+      <pubDate>Thu, 02 Mar 2017 07:50:58 -0500</pubDate>
+      <author>greg@orillian.com (Greg Graham)</author>
+      <guid>https://orillian.com/2017/03/02/sql-can-be-beautiful-but-it-takes-effort/</guid>
+      <description>&lt;p&gt;Code reviews are necessary part of maintaining a sane work environment. New developers can learn from seasoned ones, seasoned developers will be less likely to get loose with their promotions.&lt;/p&gt;
+
+&lt;p&gt;When your SQL code is all over like a dog&amp;rsquo;s breakfast, you can expect unexpected results. Continue reading for an example of a recent review.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;original&#34;&gt;Original&amp;hellip;&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-SQL&#34;&gt;CREATE Procedure [dbo].[sp_MTShipDesk_MCHQStatus3] as
+
+Begin
+  declare @tmpMCCustOrderNo varchar(10), @tmpCompareOrderno varchar(10), @tmpMCPackageID varchar(21), @tmpCurrentMC int
+  declare @tmp1 TABlE(OrderNo varchar(10), MCTotCnt int)
+  declare @tmp2 TABLE(Orderno varchar(10),PackageID varchar(21), MCBoxX int)
+
+  --First get the Total Count of MC packages on this Order
+  Insert into @tmp1(OrderNo, MCTotCnt)
+    SELECT s.CustOrderNo, count(Distinct s.PackageID)
+  From     MTPacking..SDST s
+    Inner Join LaneMstr..MixedCaseHoldingQueue MCHQ on
+      MCHQ.PackageID = s.PackageID
+  Group By s.CustOrderNo
+
+  Insert into @tmp2(OrderNo,PackageID,MCBoxX)
+  Select CustorderNO, PackageID, ROW_NUMBER() Over (Partition by CustOrderNo Order by packageid) as rn
+  FROM
+  (      
+      Select distinct s.CustOrderNo, s.PackageID  
+      From MTPacking..SDST s
+      Inner Join @tmp1 l
+        on s.CustOrderNo = l.OrderNo and IsNull(s.BoxType, &#39;&#39;) &amp;lt;&amp;gt; &#39;&#39;
+  ) as DATA
+
+  declare  @tmp3 table(SalesID varchar(20), Shipper Varchar(50), PackageID Varchar(21), ShipToName Varchar(100), UCC128 Varchar(50), Priority int, status varchar(20),
+    LastUpdate datetime, shipdate datetime, pallets int, packages int, mcboxY int)
+
+  Insert into @tmp3 (SalesID, Shipper, PackageID, ShipToName, UCC128, Priority, status, LastUpdate, shipdate, pallets, packages, mcboxY)
+  Select Distinct i.ax_salesid as SalesID, i.ShipMethod,  m.PackageID, i.ShipToName, m.UCC128, m.Priority Priority, m.MCHQStatus Status, m.LastUpdate, i.ShipDate ShipDate,  
+    COUNT(Distinct s.ucc128) Pallets, COUNT(Distinct S.packageid) Packages, T2.MCTotCnt MCBoxY  
+  From LaneMstr..MixedCaseHoldingQueue m  
+    Inner Join MTPacking..InProcessOrders i  on LEFT (m.packageid, 6) = i.CustOrderNo  
+    Inner Join MTPacking..SDST s on S.CustOrderNo = I.CustOrderNo  
+    Left Join @tmp1 T2 on T2.OrderNo = S.CustOrderNo    
+  Group by i.ax_salesid , i.ShipMethod, m.PackageID, i.ShipToName, m.UCC128, m.Priority, m.MCHQStatus, m.LastUpdate, i.ShipDate , T2.MCTotCnt
+  Order by m.Priority, i.AX_SalesID, m.PackageID
+
+  Select MCR.SalesID, MCR.Shipper, MCR.PackageID, MCR.ShipToName,
+    MCR.UCC128,
+    MCR.Priority, MCR.Status, MCR.LastUpdate, MCR.ShipDate, MCR.Pallets, MCR.Packages, MCM.MCBoxX as BoxX, MCR.mcboxY as OfY
+  From @tmp3 MCR
+  Inner Join @tmp2 MCM on
+    MCM.PackageID = MCR.PackageID
+  Order by MCR.Priority, MCR.SalesID, MCM.MCBoxX, MCR.mcboxY  
+END  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;after-review&#34;&gt;After review&amp;hellip;&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-SQL&#34;&gt;CREATE Procedure [dbo].[sp_MTShipDesk_MCHQStatus3] as
+
+; with
+enumerateBoxesInHoldingQueue as (
+select s.CustOrderNo
+      ,hq.PackageId
+      ,ROW_NUMBER() over (partition by s.CustOrderNo
+                          order by hq.packageid) as boxNum
+  from MTPacking..SDST s
+         inner join
+       LaneMstr..MixedCaseHoldingQueue hq
+         on hq.PackageID = s.PackageID
+    where s.BoxType &amp;lt;&amp;gt; &#39;&#39;
+      and s.BoxType is not null
+    group by s.CustOrderNo
+            ,hq.PackageId
+)
+
+,boxCountInHoldingQueue as (
+select ep2.CustOrderNo
+      ,max(ep2.boxNum) as totalBoxes
+  from enumerateBoxesInHoldingQueue ep2
+ group by ep2.CustOrderNo
+)
+
+,orderTotalPalletAndPackageCounts as (
+select CustOrderNo
+      ,count(distinct s.ucc128) Pallets
+      ,count(distinct S.packageid) Packages
+  from MTPacking..SDST s
+ group by CustOrderNo
+)
+
+,mixedCaseHoldingQueueDetails as (
+select i.ax_salesid as SalesID
+      ,i.ShipMethod
+      ,m.PackageID
+      ,i.ShipToName
+      ,m.UCC128
+      ,m.Priority
+      ,m.MCHQStatus as Status
+      ,m.LastUpdate
+      ,i.ShipDate
+  from LaneMstr..MixedCaseHoldingQueue m
+         inner join
+       MTPacking..InProcessOrders i  
+         on LEFT (m.packageid, 6) = i.CustOrderNo
+)
+
+select hq.*
+      ,pap.Pallets
+      ,pap.Packages
+      ,eb.boxNum
+      ,bc.totalBoxes
+  from mixedCaseHoldingQueueDetails hq
+         inner join
+       enumerateBoxesInHoldingQueue eb
+         on eb.PackageID = hq.PackageID
+         inner join
+       boxCountInHoldingQueue bc
+         on bc.CustOrderNo = eb.CustOrderNo
+         inner join
+       orderTotalPalletAndPackageCounts pap
+         on pap.CustOrderNo = eb.CustOrderNo
+ order by hq.Priority
+         ,hq.SalesID
+         ,eb.boxNum
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;changes-made&#34;&gt;Changes made&amp;hellip;&lt;/h2&gt;
+
+&lt;h3 id=&#34;remove-unused-variables&#34;&gt;Remove unused variables&lt;/h3&gt;
+
+&lt;p&gt;&amp;lsquo;nuf said&lt;/p&gt;
+
+&lt;h3 id=&#34;rename-temporary-tables&#34;&gt;Rename temporary tables&lt;/h3&gt;
+
+&lt;p&gt;Temporary tables are variables in SQL. They need to have descriptive names.&lt;/p&gt;
+
+&lt;p&gt;There is a clever piece of code in the original that counts the packages in the holding queue, however when the temporary table is named &lt;code&gt;@tmp2&lt;/code&gt; and the column name is &lt;code&gt;rn&lt;/code&gt; it is virtually impossible to figure out what that code does.&lt;/p&gt;
+
+&lt;p&gt;Compare that to the same code used in the CTE named &lt;code&gt;enumerateBoxesInHoldingQueue&lt;/code&gt; and column named &lt;code&gt;boxNum&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;try-simplifying-using-the-with-query-syntax&#34;&gt;Try simplifying using the &lt;code&gt;;with&lt;/code&gt; query syntax&lt;/h3&gt;
+
+&lt;p&gt;I remember when writing SQL queries using the ANSI syntax seemed awkward. These days it seems so natural to separate join syntax from filter syntax. I cannot imagine going back.&lt;/p&gt;
+
+&lt;p&gt;Writing code using the &lt;code&gt;;with&lt;/code&gt; CTE syntax will be the new standard. Temporary tables will be required far less often. Good SQL code can still be written using temporary table, but I find the CTE syntax more expressive and I encourage everyone to give it a try.&lt;/p&gt;
+
+&lt;h3 id=&#34;comments-might-not-be-necessary&#34;&gt;Comments might not be necessary&lt;/h3&gt;
+
+&lt;p&gt;The best code is self-documenting. That should be the goal. Let it be understood that sometimes, you need a comment or two, but when CTEs are named like &lt;code&gt;enumerateBoxesInHoldingQueue&lt;/code&gt; and &lt;code&gt;orderTotalPalletAndPackageCounts&lt;/code&gt;. Code that requires a lot of comment is likely a &lt;a href=&#34;https://en.wikipedia.org/wiki/Code_smell&#34;&gt;code smell&lt;/a&gt; that indicates something else is wrong.&lt;/p&gt;
+
+&lt;h3 id=&#34;code-format-is-important&#34;&gt;Code format is important&lt;/h3&gt;
+
+&lt;p&gt;Personally I like the new format. I&amp;rsquo;m not looking for perfection. I don&amp;rsquo;t believe that one format fits all. But I do believe that the proposed format is more readable then the original.&lt;/p&gt;
+
+&lt;p&gt;** One note of caution here&amp;hellip; ** looking for the perfect format will destroy the intent here, which is to make the code easier to grok.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-query-engine-was-written-by-humans&#34;&gt;The query engine was written by humans&lt;/h3&gt;
+
+&lt;p&gt;Keep in mind that the query engine was written by humans. It is really good at figuring out what our intentions are, however, if a human cannot understand the code, then how is the query engine suppose to return the desired results!&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Getting started with Hugo static website generator</title>

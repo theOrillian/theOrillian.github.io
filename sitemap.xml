@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://orillian.com/2017/03/02/sql-can-be-beautiful-but-it-takes-effort/</loc>
+    <lastmod>2017-03-02T07:50:58-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://orillian.com/2017/02/25/getting-started-with-hugo-static-website-generator/</loc>
     <lastmod>2017-02-25T07:04:29-05:00</lastmod>
   </url>
@@ -12,8 +17,20 @@
   </url>
   
   <url>
+    <loc>https://orillian.com/tags/code-review/</loc>
+    <lastmod>2017-03-02T07:50:58-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://orillian.com/post/</loc>
-    <lastmod>2017-02-25T07:04:29-05:00</lastmod>
+    <lastmod>2017-03-02T07:50:58-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://orillian.com/tags/simple-is-hard/</loc>
+    <lastmod>2017-03-02T07:50:58-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -30,7 +47,7 @@
   
   <url>
     <loc>https://orillian.com/</loc>
-    <lastmod>2017-02-25T07:04:29-05:00</lastmod>
+    <lastmod>2017-03-02T07:50:58-05:00</lastmod>
     <priority>0</priority>
   </url>
   

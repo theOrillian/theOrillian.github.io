@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>SQL can be beautiful, but it takes effort  &middot; theOrillian</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="SQL, Style, ">
+
+
+<meta property="og:title" content="SQL can be beautiful, but it takes effort  &middot; theOrillian ">
+<meta property="og:site_name" content="theOrillian"/>
+<meta property="og:url" content="https://orillian.com/2017/03/02/sql-can-be-beautiful-but-it-takes-effort/" />
+<meta property="og:locale" content="en-EN">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2017-03-02T07:50:58-05:00" />
+<meta property="og:article:modified_time" content="2017-03-02T07:50:58-05:00" />
+
+  
+    
+<meta property="og:article:tag" content="SQL">
+    
+<meta property="og:article:tag" content="Style">
+    
+  
+
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "SQL can be beautiful, but it takes effort",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2017-03-02",
+    "description": "",
+    "wordCount":  788 
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://orillian.com/2017/03/02/sql-can-be-beautiful-but-it-takes-effort/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://orillian.com/touch-icon-144-precomposed.png">
+<link href="https://orillian.com/favicon.png" rel="icon">
+
+<meta name="generator" content="Hugo 0.18.1" />
+
+  
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://orillian.com/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://orillian.com/css/style.css">
+<link rel="stylesheet" href="https://orillian.com/css/highlight/default.css">
+
+  
+  
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'Your Google Analytics tracking code', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+</head>
+<body>
+  <main id="main-wrapper" class="container main_wrapper has-sidebar">
+    <header id="main-header" class="container main_header">
+  <div class="container brand">
+  <div class="container title h1-like">
+  <a class="baselink" href="https://orillian.com/">
+  theOrillian
+
+</a>
+
+</div>
+
+  
+<div class="container topline">
+  
+  Dynamics 365 For Operations
+
+
+</div>
+
+
+</div>
+
+  <nav class="container nav primary no-print">
+  
+
+<a class="homelink" href="https://orillian.com/">Home</a>
+
+
+  
+<a href="https://orillian.com/about" title="About me">About me</a>
+
+<a href="https://orillian.com/post" title="Show list of posts">Posts</a>
+
+<a href="https://orillian.com/post" title="Show list of software projects">Software</a>
+
+<a href="https://orillian.com/tags" title="Show list of tags">Tags</a>
+
+
+</nav>
+
+<div class="container nav secondary no-print">
+  
+<a id="contact-link-email" class="contact_link" href="mailto:greg@orillian.com">
+  <span class="fa fa-envelope-square"></span><span>email</span></a>
+
+
+
+<a id="contact-link-github" class="contact_link" href="https://github.com/theOrillian">
+  <span class="fa fa-github-square"></span><span>github</span></a>
+
+
+
+
+
+<a id="contact-link-linkedin" class="contact_link" href="https://www.linkedin.com/in/gpgraham">
+  <span class="fa fa-linkedin-square"></span><span>linkedin</span></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+
+</header>
+
+
+<article id="main-content" class="container main_content single">
+  <header class="container hat">
+  <h1>SQL can be beautiful, but it takes effort
+</h1>
+
+  <div class="metas">
+<time datetime="2017-03-02">2 Mar, 2017</time>
+
+
+  
+    &middot; by Greg Graham, theOrillian
+  
+  &middot; Read in about 4 min
+  &middot; (788 Words)
+  <br>
+  
+<a class="label" href="https://orillian.com/tags/code-review">Code review</a>
+
+<a class="label" href="https://orillian.com/tags/simple-is-hard">Simple is hard</a>
+
+
+
+</div>
+
+</header>
+
+  <div class="container content">
+  <p>Code reviews are necessary part of maintaining a sane work environment. New developers can learn from seasoned ones, seasoned developers will be less likely to get loose with their promotions.</p>
+
+<p>When your SQL code is all over like a dog&rsquo;s breakfast, you can expect unexpected results. Continue reading for an example of a recent review.</p>
+
+<p></p>
+
+<h2 id="original">Original&hellip;</h2>
+
+<pre><code class="language-SQL">CREATE Procedure [dbo].[sp_MTShipDesk_MCHQStatus3] as
+
+Begin
+  declare @tmpMCCustOrderNo varchar(10), @tmpCompareOrderno varchar(10), @tmpMCPackageID varchar(21), @tmpCurrentMC int
+  declare @tmp1 TABlE(OrderNo varchar(10), MCTotCnt int)
+  declare @tmp2 TABLE(Orderno varchar(10),PackageID varchar(21), MCBoxX int)
+
+  --First get the Total Count of MC packages on this Order
+  Insert into @tmp1(OrderNo, MCTotCnt)
+    SELECT s.CustOrderNo, count(Distinct s.PackageID)
+  From     MTPacking..SDST s
+    Inner Join LaneMstr..MixedCaseHoldingQueue MCHQ on
+      MCHQ.PackageID = s.PackageID
+  Group By s.CustOrderNo
+
+  Insert into @tmp2(OrderNo,PackageID,MCBoxX)
+  Select CustorderNO, PackageID, ROW_NUMBER() Over (Partition by CustOrderNo Order by packageid) as rn
+  FROM
+  (      
+      Select distinct s.CustOrderNo, s.PackageID  
+      From MTPacking..SDST s
+      Inner Join @tmp1 l
+        on s.CustOrderNo = l.OrderNo and IsNull(s.BoxType, '') &lt;&gt; ''
+  ) as DATA
+
+  declare  @tmp3 table(SalesID varchar(20), Shipper Varchar(50), PackageID Varchar(21), ShipToName Varchar(100), UCC128 Varchar(50), Priority int, status varchar(20),
+    LastUpdate datetime, shipdate datetime, pallets int, packages int, mcboxY int)
+
+  Insert into @tmp3 (SalesID, Shipper, PackageID, ShipToName, UCC128, Priority, status, LastUpdate, shipdate, pallets, packages, mcboxY)
+  Select Distinct i.ax_salesid as SalesID, i.ShipMethod,  m.PackageID, i.ShipToName, m.UCC128, m.Priority Priority, m.MCHQStatus Status, m.LastUpdate, i.ShipDate ShipDate,  
+    COUNT(Distinct s.ucc128) Pallets, COUNT(Distinct S.packageid) Packages, T2.MCTotCnt MCBoxY  
+  From LaneMstr..MixedCaseHoldingQueue m  
+    Inner Join MTPacking..InProcessOrders i  on LEFT (m.packageid, 6) = i.CustOrderNo  
+    Inner Join MTPacking..SDST s on S.CustOrderNo = I.CustOrderNo  
+    Left Join @tmp1 T2 on T2.OrderNo = S.CustOrderNo    
+  Group by i.ax_salesid , i.ShipMethod, m.PackageID, i.ShipToName, m.UCC128, m.Priority, m.MCHQStatus, m.LastUpdate, i.ShipDate , T2.MCTotCnt
+  Order by m.Priority, i.AX_SalesID, m.PackageID
+
+  Select MCR.SalesID, MCR.Shipper, MCR.PackageID, MCR.ShipToName,
+    MCR.UCC128,
+    MCR.Priority, MCR.Status, MCR.LastUpdate, MCR.ShipDate, MCR.Pallets, MCR.Packages, MCM.MCBoxX as BoxX, MCR.mcboxY as OfY
+  From @tmp3 MCR
+  Inner Join @tmp2 MCM on
+    MCM.PackageID = MCR.PackageID
+  Order by MCR.Priority, MCR.SalesID, MCM.MCBoxX, MCR.mcboxY  
+END  
+</code></pre>
+
+<h2 id="after-review">After review&hellip;</h2>
+
+<pre><code class="language-SQL">CREATE Procedure [dbo].[sp_MTShipDesk_MCHQStatus3] as
+
+; with
+enumerateBoxesInHoldingQueue as (
+select s.CustOrderNo
+      ,hq.PackageId
+      ,ROW_NUMBER() over (partition by s.CustOrderNo
+                          order by hq.packageid) as boxNum
+  from MTPacking..SDST s
+         inner join
+       LaneMstr..MixedCaseHoldingQueue hq
+         on hq.PackageID = s.PackageID
+    where s.BoxType &lt;&gt; ''
+      and s.BoxType is not null
+    group by s.CustOrderNo
+            ,hq.PackageId
+)
+
+,boxCountInHoldingQueue as (
+select ep2.CustOrderNo
+      ,max(ep2.boxNum) as totalBoxes
+  from enumerateBoxesInHoldingQueue ep2
+ group by ep2.CustOrderNo
+)
+
+,orderTotalPalletAndPackageCounts as (
+select CustOrderNo
+      ,count(distinct s.ucc128) Pallets
+      ,count(distinct S.packageid) Packages
+  from MTPacking..SDST s
+ group by CustOrderNo
+)
+
+,mixedCaseHoldingQueueDetails as (
+select i.ax_salesid as SalesID
+      ,i.ShipMethod
+      ,m.PackageID
+      ,i.ShipToName
+      ,m.UCC128
+      ,m.Priority
+      ,m.MCHQStatus as Status
+      ,m.LastUpdate
+      ,i.ShipDate
+  from LaneMstr..MixedCaseHoldingQueue m
+         inner join
+       MTPacking..InProcessOrders i  
+         on LEFT (m.packageid, 6) = i.CustOrderNo
+)
+
+select hq.*
+      ,pap.Pallets
+      ,pap.Packages
+      ,eb.boxNum
+      ,bc.totalBoxes
+  from mixedCaseHoldingQueueDetails hq
+         inner join
+       enumerateBoxesInHoldingQueue eb
+         on eb.PackageID = hq.PackageID
+         inner join
+       boxCountInHoldingQueue bc
+         on bc.CustOrderNo = eb.CustOrderNo
+         inner join
+       orderTotalPalletAndPackageCounts pap
+         on pap.CustOrderNo = eb.CustOrderNo
+ order by hq.Priority
+         ,hq.SalesID
+         ,eb.boxNum
+</code></pre>
+
+<h2 id="changes-made">Changes made&hellip;</h2>
+
+<h3 id="remove-unused-variables">Remove unused variables</h3>
+
+<p>&lsquo;nuf said</p>
+
+<h3 id="rename-temporary-tables">Rename temporary tables</h3>
+
+<p>Temporary tables are variables in SQL. They need to have descriptive names.</p>
+
+<p>There is a clever piece of code in the original that counts the packages in the holding queue, however when the temporary table is named <code>@tmp2</code> and the column name is <code>rn</code> it is virtually impossible to figure out what that code does.</p>
+
+<p>Compare that to the same code used in the CTE named <code>enumerateBoxesInHoldingQueue</code> and column named <code>boxNum</code></p>
+
+<h3 id="try-simplifying-using-the-with-query-syntax">Try simplifying using the <code>;with</code> query syntax</h3>
+
+<p>I remember when writing SQL queries using the ANSI syntax seemed awkward. These days it seems so natural to separate join syntax from filter syntax. I cannot imagine going back.</p>
+
+<p>Writing code using the <code>;with</code> CTE syntax will be the new standard. Temporary tables will be required far less often. Good SQL code can still be written using temporary table, but I find the CTE syntax more expressive and I encourage everyone to give it a try.</p>
+
+<h3 id="comments-might-not-be-necessary">Comments might not be necessary</h3>
+
+<p>The best code is self-documenting. That should be the goal. Let it be understood that sometimes, you need a comment or two, but when CTEs are named like <code>enumerateBoxesInHoldingQueue</code> and <code>orderTotalPalletAndPackageCounts</code>. Code that requires a lot of comment is likely a <a href="https://en.wikipedia.org/wiki/Code_smell">code smell</a> that indicates something else is wrong.</p>
+
+<h3 id="code-format-is-important">Code format is important</h3>
+
+<p>Personally I like the new format. I&rsquo;m not looking for perfection. I don&rsquo;t believe that one format fits all. But I do believe that the proposed format is more readable then the original.</p>
+
+<p>** One note of caution here&hellip; ** looking for the perfect format will destroy the intent here, which is to make the code easier to grok.</p>
+
+<h3 id="the-query-engine-was-written-by-humans">The query engine was written by humans</h3>
+
+<p>Keep in mind that the query engine was written by humans. It is really good at figuring out what our intentions are, however, if a human cannot understand the code, then how is the query engine suppose to return the desired results!</p>
+</div>
+
+
+  <footer class="container">
+  <div class="container navigation no-print">
+  <h2>Navigation</h2>
+  
+  
+
+    
+    <a class="prev" href="https://orillian.com/2017/02/25/getting-started-with-hugo-static-website-generator/" title="Getting started with Hugo static website generator">
+      Previous
+    </a>
+    
+
+    
+
+  
+
+
+</div>
+
+  <div class="container comments">
+  <h2>Comments</h2>
+  
+
+</div>
+
+</footer>
+
+</article>
+      <footer id="main-footer" class="container main_footer">
+  
+
+  <div class="container nav foot no-print">
+  
+<a href="https://orillian.com/license">license</a>
+
+
+  <a class="toplink" href="#">back to top</a>
+
+</div>
+
+  <div class="container credits">
+  
+<div class="container footline">
+  
+  Coded with <i class='fa fa-heart'></i>
+
+
+</div>
+
+
+  
+<div class="container copyright">
+  
+  &copy; 2017 Greg Graham, theOrillian.
+
+
+</div>
+
+
+</div>
+
+</footer>
+
+    </main>
+    
+
+
+<script src="https://orillian.com/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    
+  </body>
+</html>
+
