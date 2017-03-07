@@ -19,9 +19,16 @@
       <guid>https://orillian.com/2017/03/02/sql-can-be-beautiful-but-it-takes-effort/</guid>
       <description>&lt;p&gt;Code reviews are necessary part of maintaining a sane work environment. New developers can learn from seasoned ones, seasoned developers will be less likely to get loose with their promotions.&lt;/p&gt;
 
-&lt;p&gt;When your SQL code is all over like a dog&amp;rsquo;s breakfast, you can expect unexpected results. Continue reading for an example of a recent review.&lt;/p&gt;
+&lt;p&gt;When your SQL code is all over like a dog&amp;rsquo;s breakfast, you can expect unexpected results. Continue reading for an example of a recent code uplift.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;For more information about conducting a proper code review, refer to:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.fogcreek.com/increase-defect-detection-with-our-code-review-checklist-example/&#34; target=&#34;_blank&#34;&gt;Code review checklist&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.kevinlondon.com/2015/05/05/code-review-best-practices.html&#34; target=&#34;_blank&#34;&gt;Code review best practices&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&#34;original&#34;&gt;Original&amp;hellip;&lt;/h2&gt;
 
@@ -166,13 +173,14 @@ select hq.*
 
 &lt;h3 id=&#34;comments-might-not-be-necessary&#34;&gt;Comments might not be necessary&lt;/h3&gt;
 
-&lt;p&gt;The best code is self-documenting. That should be the goal. Let it be understood that sometimes, you need a comment or two, but when CTEs are named like &lt;code&gt;enumerateBoxesInHoldingQueue&lt;/code&gt; and &lt;code&gt;orderTotalPalletAndPackageCounts&lt;/code&gt;. Code that requires a lot of comment is likely a &lt;a href=&#34;https://en.wikipedia.org/wiki/Code_smell&#34;&gt;code smell&lt;/a&gt; that indicates something else is wrong.&lt;/p&gt;
+&lt;p&gt;Every major function or procedure should have a comment that converts the intent of the code into plain language. However, inside the code module,
+the best code is self-documenting. That should be the goal. Let it be understood that sometimes, you need a comment or two, but when CTEs are named like &lt;code&gt;enumerateBoxesInHoldingQueue&lt;/code&gt; and &lt;code&gt;orderTotalPalletAndPackageCounts&lt;/code&gt;. Code that requires a lot of comment is likely a &lt;a href=&#34;https://en.wikipedia.org/wiki/Code_smell&#34;&gt;code smell&lt;/a&gt; that indicates something else is wrong.&lt;/p&gt;
 
 &lt;h3 id=&#34;code-format-is-important&#34;&gt;Code format is important&lt;/h3&gt;
 
 &lt;p&gt;Personally I like the new format. I&amp;rsquo;m not looking for perfection. I don&amp;rsquo;t believe that one format fits all. But I do believe that the proposed format is more readable then the original.&lt;/p&gt;
 
-&lt;p&gt;** One note of caution here&amp;hellip; ** looking for the perfect format will destroy the intent here, which is to make the code easier to grok.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;One note of caution here&amp;hellip;&lt;/strong&gt; looking for the perfect format will destroy the intent here, which is to make the code easier to grok and to encourage developers to write the best code they can.&lt;/p&gt;
 
 &lt;h3 id=&#34;the-query-engine-was-written-by-humans&#34;&gt;The query engine was written by humans&lt;/h3&gt;
 

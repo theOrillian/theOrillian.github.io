@@ -49,7 +49,7 @@
     },
     "datePublished": "2017-03-02",
     "description": "",
-    "wordCount":  788 
+    "wordCount":  840 
   }
 </script>
 
@@ -81,7 +81,7 @@
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'Your Google Analytics tracking code', 'auto');
+	  ga('create', 'UA-93119108-1', 'auto');
 	  ga('send', 'pageview');
 
 	</script>
@@ -102,7 +102,7 @@
   
 <div class="container topline">
   
-  Dynamics 365 For Operations
+  Dynamics 365 Done Right
 
 
 </div>
@@ -184,7 +184,7 @@
     &middot; by Greg Graham, theOrillian
   
   &middot; Read in about 4 min
-  &middot; (788 Words)
+  &middot; (840 Words)
   <br>
   
 <a class="label" href="https://orillian.com/tags/code-review">Code review</a>
@@ -200,9 +200,16 @@
   <div class="container content">
   <p>Code reviews are necessary part of maintaining a sane work environment. New developers can learn from seasoned ones, seasoned developers will be less likely to get loose with their promotions.</p>
 
-<p>When your SQL code is all over like a dog&rsquo;s breakfast, you can expect unexpected results. Continue reading for an example of a recent review.</p>
+<p>When your SQL code is all over like a dog&rsquo;s breakfast, you can expect unexpected results. Continue reading for an example of a recent code uplift.</p>
 
 <p></p>
+
+<p>For more information about conducting a proper code review, refer to:</p>
+
+<ul>
+<li><a href="http://blog.fogcreek.com/increase-defect-detection-with-our-code-review-checklist-example/" target="_blank">Code review checklist</a></li>
+<li><a href="https://www.kevinlondon.com/2015/05/05/code-review-best-practices.html" target="_blank">Code review best practices</a></li>
+</ul>
 
 <h2 id="original">Original&hellip;</h2>
 
@@ -347,13 +354,14 @@ select hq.*
 
 <h3 id="comments-might-not-be-necessary">Comments might not be necessary</h3>
 
-<p>The best code is self-documenting. That should be the goal. Let it be understood that sometimes, you need a comment or two, but when CTEs are named like <code>enumerateBoxesInHoldingQueue</code> and <code>orderTotalPalletAndPackageCounts</code>. Code that requires a lot of comment is likely a <a href="https://en.wikipedia.org/wiki/Code_smell">code smell</a> that indicates something else is wrong.</p>
+<p>Every major function or procedure should have a comment that converts the intent of the code into plain language. However, inside the code module,
+the best code is self-documenting. That should be the goal. Let it be understood that sometimes, you need a comment or two, but when CTEs are named like <code>enumerateBoxesInHoldingQueue</code> and <code>orderTotalPalletAndPackageCounts</code>. Code that requires a lot of comment is likely a <a href="https://en.wikipedia.org/wiki/Code_smell">code smell</a> that indicates something else is wrong.</p>
 
 <h3 id="code-format-is-important">Code format is important</h3>
 
 <p>Personally I like the new format. I&rsquo;m not looking for perfection. I don&rsquo;t believe that one format fits all. But I do believe that the proposed format is more readable then the original.</p>
 
-<p>** One note of caution here&hellip; ** looking for the perfect format will destroy the intent here, which is to make the code easier to grok.</p>
+<p><strong>One note of caution here&hellip;</strong> looking for the perfect format will destroy the intent here, which is to make the code easier to grok and to encourage developers to write the best code they can.</p>
 
 <h3 id="the-query-engine-was-written-by-humans">The query engine was written by humans</h3>
 
